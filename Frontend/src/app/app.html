@@ -1,1 +1,52 @@
-<router-outlet />
+<div class="container">
+  <header class="header">
+    <h1>📚 Biblioteca Virtual</h1>
+    <p class="subtitle">Sistema de Gestión de Libros y Autores</p>
+  </header>
+
+  <main class="grid-container">
+    <!-- Sección Libros -->
+    <section class="card">
+      <div class="card-header">
+        <h2>📖 Libros Registrados</h2>
+      </div>
+      <div class="card-body">
+        <div class="item-list">
+          @for (libro of libros; track libro.id) {
+            <div class="item-card">
+              <div class="item-content">
+                <h3>{{ libro.titulo }}</h3>
+                <span class="badge">Año: {{ libro.publicacion }}</span>
+              </div>
+            </div>
+          } @empty {
+            <p class="empty-state">No hay libros registrados en el sistema.</p>
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Autores -->
+    <section class="card">
+      <div class="card-header">
+        <h2>✍️ Autores Registrados</h2>
+      </div>
+      <div class="card-body">
+        <div class="item-list">
+          @for (autor of autores; track autor.id) {
+            <div class="item-card">
+              <div class="item-content">
+                <h3>{{ autor.nombre }}</h3>
+                <p class="meta-info">📍 {{ autor.nacionalidad }} • {{ autor.edad }} años</p>
+              </div>
+            </div>
+          } @empty {
+            <p class="empty-state">No hay autores registrados en el sistema.</p>
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+
+</div>
+
