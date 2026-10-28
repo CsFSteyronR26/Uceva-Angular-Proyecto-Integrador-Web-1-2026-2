@@ -2,7 +2,7 @@ import { pool } from "../../../config/database";
 import { Libro } from "../../../domain/interfaces/libro.interface";
 import { Autor } from "../../../domain/interfaces/autor.interface";
 
-export class LibroServices{
+export class BibliotecaService{
 
   public async getAllLibro(): Promise<Libro[]> {
     const sql = `SELECT * FROM libros;`;

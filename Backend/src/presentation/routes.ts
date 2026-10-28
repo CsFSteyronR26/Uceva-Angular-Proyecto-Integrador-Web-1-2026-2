@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { ExampleRoutes } from "./modules/example/example.routes";
+import { BibliotecaRoutes } from "./modules/example/biblioteca.routes";
 
 export class AppRoutes {
 
@@ -8,7 +9,7 @@ export class AppRoutes {
     const apiRouter = Router();
 
     // Definir rutas
-    apiRouter.use("/example", ExampleRoutes.routes);
+    apiRouter.use("/biblioteca", BibliotecaRoutes.routes);
 
     router.use("/api", apiRouter);
 
